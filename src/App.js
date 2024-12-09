@@ -5,6 +5,7 @@ import Header from "./Components/header";
 import Home from "./Components/home";
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
+import WiFiCoverage from "./Components/coveragePages/wiFiCoverage";
 
 function App() {
   const routesArray = [
@@ -23,6 +24,10 @@ function App() {
     {
       path: "/home",
       element: <Home />,
+    },
+    {
+      path: "/wiFiCoverage",
+      element: <WiFiCoverage/>,
     },
   ];
   let routesElement = useRoutes(routesArray);
