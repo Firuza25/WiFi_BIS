@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Header from './Components/Header';
-import Login from './Components/Login';
-import Register from './Components/Register';
-import Account from './Components/Account';
-import Home from './Components/Home';
-import './App.css';
+import Login from "./Components/auth/login";
+import Register from "./Components/auth/register";
+import "./App.css"
+import Header from "./Components/header";
+import Home from "./Components/home";
+import { AuthProvider } from "./contexts/authContext";
+import { useRoutes } from "react-router-dom";
 
-const App = () => {
-  const [user, setUser] = useState(null);
-
+function App() {
+  const routesArray = [
+    {
+      path: "*",
+      element: <Login />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
+    },
+  ];
+  let routesElement = useRoutes(routesArray);
   return (
-    <Router>
-      <Header user={user} setUser={setUser} />
-      <Routes>
-        <Route path="/" element={<Navigate to={user ? "/home" : "/login"} />} />
-        <Route path="/home" element={user ? <Home /> : <Navigate to="/login" />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/account" element={user ? <Account user={user} /> : <Navigate to="/login" />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Header />
+      <div className="w-full h-screen flex flex-col">{routesElement}</div>
+    </AuthProvider>
   );
-};
+}
 
 export default App;

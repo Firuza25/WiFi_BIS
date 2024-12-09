@@ -1,90 +1,211 @@
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav {
-    background-color: #007bff;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #0056b3;
-  }
-  
-  h1 {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .welcome {
-    text-align: center;
-    padding: 20px;
-    background-color: #e6f7ff;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 600px;
-  }
-  
+  background-color: black;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* Это гарантирует, что отступы и границы не увеличат размеры элементов */
+}
 
-  nav button {
-    background-color: #ff4d4f;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  nav button:hover {
-    background-color: #d9363e;
-  }
-  
-  
+/* Header styles */
+header {
+  background-color: black;
+  color: #9b59b6; /* Неоновый фиолетовый цвет */
+  padding: 20px;
+  text-align: center;
+  font-size: 32px; /* Увеличиваем размер текста */
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(155, 89, 182, 0.8); /* Добавляем неоновый эффект */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Header hover effect for a more glowing look */
+header:hover {
+  color: #8e44ad; /* Немного изменим цвет на темнее */
+  text-shadow: 0 0 20px rgba(155, 89, 182, 1), 0 0 30px rgba(155, 89, 182, 0.8); /* Увеличиваем яркость свечения */
+}
+
+/* Styling for forms */
+input[type="email"], input[type="password"] {
+  width: 100%; /* Ширина на 100% от контейнера */
+  max-width: 350px; /* Ограничиваем максимальную ширину */
+  padding: 12px;
+  border: 2px solid white; /* Белая рамка */
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 20px; /* Пространство между полями */
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Учитываем границы и паддинги в ширину */
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+  border-color: #444;
+  outline: none;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  width: 100%; /* Ширина на 100% от контейнера */
+  max-width: 350px; /* Ограничиваем максимальную ширину кнопки */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Учитываем границы и паддинги в ширину */
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* Flexbox container for centering */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+/* Card styles */
+div.w-96 {
+  background-color: black;
+  border: 1px solid white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Link styles */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styling for small text */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+  margin-top: 20px;
+}
+
+
+/* header.css */
+.header-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white; /* Белый фон */
+  color: purple; /* Фиолетовый текст */
+  z-index: 20;
+  border-bottom: 1px solid #ccc;
+}
+
+.text-purple-600 {
+  color: #9b4dca; /* Неоново фиолетовый */
+  transition: color 0.3s ease;
+}
+
+.text-purple-600:hover {
+  color: #7a2ea2; /* Немного темнее при наведении */
+}
+
+
+/* Уменьшаем иконку Google */
+.google-icon {
+  width: 40px; /* Устанавливаем нужный размер */
+  height: 20px; /* Устанавливаем нужный размер */
+  vertical-align: middle;
+}
+
+/* Для заголовка Welcome Back */
+.center-text {
+  text-align: center;
+}
+
+/* Для контейнера OR с разделителями */
+.center-or-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875rem; /* текст размер 14px */
+}
+
+.center-or-container .divider {
+  flex-grow: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.center-or-container .or-text {
+  padding: 0 0.5rem;
+  font-weight: bold;
+}
+
+
+
+.text-sm, .text-gray-800, .bg-blue-500{
+  text-align: center;
+}
+
+/* Home.css */
+.home-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.home-container h2 {
+  margin-top: 24px;
+  font-size: 1.5rem; /* увеличенный размер текста */
+}
+
+.home-container button {
+  background-color: #9b4dff; /* неоново фиолетовый */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.25rem; /* увеличенный размер текста */
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(155, 77, 255, 0.8); /* эффект свечения */
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.home-container button:hover {
+  box-shadow: 0 0 20px rgba(155, 77, 255, 1); /* увеличение свечения при наведении */
+}
+
+.home-container .image-container {
+  margin-top: 35px;
+}
+
+.home-container img {
+  max-width: 100%;
+  height: auto;
+}
