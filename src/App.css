@@ -209,3 +209,68 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
+
+.adviceses {
+  background-color: #1a1a1a; /* Темный фон */
+  color: #fff; /* Белый текст */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.adviceses h2 {
+  text-align: center;
+  color: #9b4dca; /* Фиолетовый цвет заголовка */
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.advices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.advice-card {
+  background-color: #2c2c2c; /* Темный фон для карточек */
+  color: #f1f1f1; /* Светлый текст */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.advice-card h3 {
+  color: #9b4dca; /* Фиолетовый для заголовков карточек */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.advice-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.back-button {
+  background-color: #9b4dca; /* Фиолетовый цвет кнопки */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #7a3b99; /* Более темный фиолетовый при наведении */
+}
